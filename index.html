@@ -10,9 +10,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FTC Poseidon Robotics</title>
-  <!-- Tailwind CSS for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -43,77 +41,64 @@
     .text-custom-off-white {
       color: #f2f9e8;
     }
+
+    /* Styling for the sticky navbar */
+    .sticky-nav {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sticky-nav.visible {
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body class="text-custom-off-white">
 
-  <!-- Main Container -->
+  <nav id="sticky-navbar" class="sticky-nav fixed top-0 w-full z-50 bg-custom-dark-blue shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/">
+        <img class="h-10" src="img/logo.png" alt="Poseidon Robotics Logo">
+      </a>
+      <div class="space-x-4 flex items-center">
+        <a href="/" class="text-custom-off-white hover:text-gray-400 transition-colors duration-300">Home</a>
+        <a href="/outreach"
+          class="text-custom-off-white hover:text-gray-400 transition-colors duration-300">Outreach</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="FTC-poseidon">
 
-    <!-- Hero Section -->
     <header class="relative h-screen min-h-[500px] flex items-center justify-center text-center text-white">
-      <!-- Background Image with Overlay -->
       <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
       <img class="absolute inset-0 w-full h-full object-cover" src="img/teamphoto.png" alt="Poseidon Robot" />
 
-      <!-- Logo -->
-      <img class="absolute top-8 left-8 w-24 h-auto z-20" src="img/logo.png" alt="Poseidon Robotics Logo">
+      <a href="/" class="absolute top-8 left-8 z-20">
+        <img class="w-16 h-auto" src="img/logo.png" alt="Poseidon Robotics Logo">
+      </a>
 
-      <!-- Hero Content -->
       <div class="relative z-10 px-4">
-        <h1
-          class="text-6xl md:text-8xl font-bold tracking-tight font-family: 'Poppins', sans-serif;  font-weight: 700;">
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tight font-family: 'Poppins', sans-serif; font-weight: 700;">
           Poseidon</h1>
         <p>The best robotics team ever.</p>
+        <div class="mt-4 text-xl space-x-2 font-semibold flex justify-center">
+          <a href="/outreach"
+            class="text-custom-off-white hover:text-gray-400 transition-colors duration-300">Outreach</a>
+          <span>•</span>
+          <span>Thing</span>
+          <span>•</span>
+          <span>Thing2</span>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- About Us Section -->
-      <section class="bg-custom-dark-blue py-16 md:py-24">
-        <div class="container mx-auto px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="flex justify-center">
-              <img class="rounded-lg shadow-2xl w-full max-w-sm" src="img/robotcloseup.png" alt="Robot Closeup" />
-            </div>
-            <div class="text-center lg:text-left">
-              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">About Us</h2>
-              <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                Blah blah great experience team blah blah blah great experience team blah blah blah great experience
-                team blah blah blah great experience team blah blah blah great experience team blah blah blah great
-                experience team. We are passionate about robotics and teamwork.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Last Year's Robot Section -->
-      <section class="bg-custom-medium-blue py-16 md:py-24">
-        <div class="container mx-auto px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="text-center lg:text-left lg:order-2">
-              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Last Year’s Robot</h2>
-              <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                Something about how this robot was an amazing journey blah blah blah something about how this robot was
-                an amazing journey blah blah blah something about how this robot was an amazing journey blah blah blah
-                something about our achievements and the challenges we overcame.
-              </p>
-            </div>
-            <div class="flex justify-center lg:order-1">
-              <img class="rounded-lg shadow-2xl w-full max-w-md" src="img/previousrobot.png" alt="Previous Robot" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Meet the Team Section -->
       <section class="bg-custom-deep-blue py-16 md:py-24">
         <div class="container mx-auto px-6 lg:px-8 text-center">
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">Meet the Team</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10">
-            <!-- Team Member Card Template -->
             <div class="team-member text-center">
               <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-gray-500"
                 src="/img/team/sai_captain.jpg" alt="Team Member">
@@ -138,7 +123,6 @@
               <h3 class="text-xl font-bold">Sai Balu</h3>
               <p class="text-gray-300">Outreach</p>
             </div>
-            <!-- Repeat for other members -->
             <div class="team-member text-center">
               <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-gray-500"
                 src="/img/team/sidhanth_mechanical.png" alt="Team Member">
@@ -163,7 +147,6 @@
               <h3 class="text-xl font-bold">Richard Zhao</h3>
               <p class="text-gray-300">Mechanical</p>
             </div>
-            <!-- Repeat for other members -->
             <div class="team-member text-center">
               <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-gray-500"
                 src="/img/team/ayaansh_mechanical.jpeg" alt="Team Member">
@@ -188,7 +171,6 @@
               <h3 class="text-xl font-bold">Another Member</h3>
               <p class="text-gray-300">CAD</p>
             </div>
-            <!-- Repeat for other members -->
             <div class="team-member text-center">
               <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-gray-500"
                 src="https://placehold.co/200x200/CCCCCC/000000?text=Person" alt="Team Member">
@@ -217,14 +199,12 @@
         </div>
       </section>
 
-      <!-- Contact Us Section -->
       <section class="bg-custom-light-blue py-16 md:py-24">
         <div class="container mx-auto px-6 lg:px-8">
           <div class="text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-10">Contact Us</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <!-- Form -->
             <div class="w-full max-w-lg mx-auto">
               <form id="contact-form" class="space-y-6">
                 <div>
@@ -250,12 +230,10 @@
               </form>
               <p id="form-status" class="mt-4 text-center font-semibold"></p>
             </div>
-            <!-- Socials and Image -->
             <div class="text-center md:text-left mt-8 md:mt-0">
               <img class="rounded-lg shadow-xl w-full max-w-md mx-auto mb-8" src="img/bigrobotcloseup.png"
                 alt="Contact related image" />
               <div class="flex items-center justify-center md:justify-start space-x-4">
-                <!-- Instagram Icon SVG -->
                 <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M12.315 2c-4.043 0-4.542.018-6.138.09-1.595.072-2.684.34-3.638 1.293C1.59 4.33.82 5.42.748 6.96c-.072 1.596-.09 2.095-.09 6.138s.018 4.542.09 6.138c.072 1.595.34 2.684 1.293 3.638.953.953 2.043 1.22 3.638 1.293 1.596.072 2.095.09 6.138.09s4.542-.018 6.138-.09c1.595-.072 2.684-.34 3.638-1.293.953-.953 1.22-2.043 1.293-3.638.072-1.596.09-2.095.09-6.138s-.018-4.542-.09-6.138c-.072-1.595-.34-2.684-1.293-3.638C20.58 1.18 19.49.912 17.9.84c-1.596-.072-2.095-.09-6.138-.09h.553zM12 4.155c4.04 0 4.48.016 6.074.088 1.46.066 2.298.334 2.928.964.63.63.898 1.468.964 2.928.072 1.594.088 2.034.088 6.074s-.016 4.48-.088 6.074c-.066 1.46-.334 2.298-.964 2.928-.63.63-1.468.898-2.928.964-1.594.072-2.034.088-6.074.088s-4.48-.016-6.074-.088c-1.46-.066-2.298-.334-2.928-.964-.63-.63-.898-1.468-.964-2.928-.072-1.594-.088-2.034-.088-6.074s.016-4.48.088-6.074c.066-1.46.334-2.298.964-2.928.63-.63 1.468-.898 2.928-.964C7.52 4.17 7.96 4.155 12 4.155zm0 2.88A5.002 5.002 0 007 12.037a5.002 5.002 0 005 5.002 5.002 5.002 0 005-5.002A5.002 5.002 0 0012 7.034zm0 8.076a3.038 3.038 0 110-6.076 3.038 3.038 0 010 6.076zm6.337-7.29a1.18 1.18 0 11-2.36 0 1.18 1.18 0 012.36 0z"
@@ -269,7 +247,6 @@
       </section>
     </main>
 
-    <!-- Footer Section -->
     <footer class="bg-gray-200 text-gray-800 py-8">
       <div class="container mx-auto px-6 lg:px-8 text-center">
         <p class="font-semibold">&copy; CC BY 4.0 | Made with ♡ by Poseidon Programming</p>
@@ -279,7 +256,6 @@
 
   </div>
 
-  <!-- JavaScript for Contact Form -->
   <script>
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
@@ -297,6 +273,17 @@
         formStatus.textContent = '';
         formStatus.classList.remove('text-green-400');
       }, 3000);
+    });
+
+    // JavaScript for sticky navbar
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('sticky-navbar');
+      const heroHeight = document.querySelector('header').offsetHeight;
+      if (window.scrollY > heroHeight - 100) {
+        navbar.classList.add('visible');
+      } else {
+        navbar.classList.remove('visible');
+      }
     });
   </script>
 </body>
